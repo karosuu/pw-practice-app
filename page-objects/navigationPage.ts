@@ -1,16 +1,20 @@
 import { Locator, Page } from "@playwright/test";
+import { HelperBase } from "./helperBase"
 
-export class NavigationPage {
+// to add the helper base we use "etedns HelperBase"
+export class NavigationPage extends HelperBase {
 
-    readonly page: Page
+    // Delete the readonly and add "Super(page) to use the helper base
+    //readonly page: Page
 
     constructor(page: Page) {
-        this.page = page
+        super(page)
     }
 
     async formLayoutsPage() {
         await this.seletGroupMenuItem('Forms')
         await this.page.getByText('Form Layouts').click()
+        await this.waitForNumberOfSeconds(2)
     }
 
     async datepickerPage() {

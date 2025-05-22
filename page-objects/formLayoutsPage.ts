@@ -1,10 +1,10 @@
 import { Locator, Page } from "@playwright/test";
-
-export class FormLayoutsPage {
-    private readonly page: Page
+import { HelperBase } from "./helperBase"
+import { basename } from "path";
+export class FormLayoutsPage extends HelperBase {    
 
     constructor(page: Page) {
-        this.page = page
+        super(page)
     }
 
     async submitUsinmgTheGridFormWithCredentialAndSelectOption(email: string, password: string, optionText: string) {
