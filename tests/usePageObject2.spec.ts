@@ -3,6 +3,7 @@ import { NavigationPage } from '..//page-objects/navigationPage'
 import { FormLayoutsPage } from '../page-objects//formLayoutsPage'
 import { DatepickerPage } from '../page-objects/datepickerPage';
 import { PageManager } from '../page-objects/pageManager';
+import {faker} from '@faker-js/faker'
 
 test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:4200/')
@@ -21,6 +22,8 @@ test('parametrized methods', async ({ page }) => {
     const navigateTo = new NavigationPage(page)
     const onFormLayoutsPage = new FormLayoutsPage(page)
     const onDatepickerPage = new DatepickerPage(page)
+    //const fullName= faker.person.fullName()
+    
 
     await navigateTo.formLayoutsPage()
     await onFormLayoutsPage.submitUsinmgTheGridFormWithCredentialAndSelectOption('test@test.com', 'Welcome1', 'Option 1')

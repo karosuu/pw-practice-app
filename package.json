@@ -1,14 +1,26 @@
 {
   "name": "ngx-admin",
   "version": "10.0.0",
-  "license": "MIT",
+  "description": "This is modified and more lightweight version of original application to practice UI Automation with Playwright.",
+  "homepage": "https://github.com/bondar-artem/pw-practice-app#readme",
+  "bugs": {
+    "url": "https://github.com/bondar-artem/pw-practice-app/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bondar-artem/pw-practice-app.git"
   },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve"
+    "start": "ng serve",
+    "pageObjects-chrome" : "npx playwright test usePageObjects.spec.ts --project=chromium",
   },
   "dependencies": {
     "@angular/animations": "^14.2.12",
